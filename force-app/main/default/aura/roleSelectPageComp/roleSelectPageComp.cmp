@@ -1,0 +1,17 @@
+<aura:component implements="flexipage:availableForAllPageTypes">
+    <lightning:navigation aura:id="navService"></lightning:navigation>
+    <aura:attribute name="roleOptions" type="List" default="[{'label':'Job Seeker', value:'JobSeeker'},
+    {'label':'Job Recruiter', value: 'JobRecruiter'}]"></aura:attribute>
+    <div class="slds-align_absolute-center card " style="background-color: white;width:100%;">
+         <div class="container">
+          <lightning:combobox class="combo" title="Select your role" 
+          name="progress"
+          label="Select a Role"
+          value="value"
+          placeholder="Select your Profile"
+          options="{!v.roleOptions}"
+          onchange="{!c.handleChange}">
+          </lightning:combobox>
+         </div>
+    </div>
+</aura:component>

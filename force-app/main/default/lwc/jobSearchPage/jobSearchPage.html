@@ -1,0 +1,60 @@
+<template>
+
+    <lightning-card>
+        <div>
+        <span style="float:left"><span style="margin-left:16px"><b>Search Jobs</b></span></span>
+    <span style="float:right">
+        <button class="slds-button" style="margin-right:16px; margin-top:0px;" onclick={handleMyJobs}>My Jobs</button>
+        <span class="slds-avatar slds-avatar_profile-image-large align-absolut" onclick={handleAvatar} style="margin-right:16px"></span>
+    </span>
+        </div>
+ 
+
+        
+        <!-- <div class="slds-box slds-box_xx-small"></div> -->
+    <!-- <div>
+        <lightning-layout horizontal-align="center">
+            <lightning-layout-item class="slds-align-middle" size=4>
+                <lightning-combobox class="slds-align-middle" name="searchTypes" value={searchedKey}
+                    placeholder="All Types" options={searchOptions} onchange={handleSearch}>
+                </lightning-combobox>
+            </lightning-layout-item>
+        </lightning-layout>
+    </div> -->
+
+    <div class="slds-grid slds-gutters">
+        <div class="slds-col slds-size_1-of-5">
+            <lightning-combobox name="searchTypes" value={searchedKey}
+            placeholder="All Types" options={searchOptions} onchange={handleSearch}>
+        </lightning-combobox>
+        </div>
+        <div class="slds-col slds-size_1-of-5">
+            <lightning-combobox name="searchTypes" value={searchedKey}
+            placeholder="All Types" options={searchOptions} onchange={handleSearch}>
+        </lightning-combobox>
+        </div>
+        <div class="slds-col slds-size_1-of-5">
+            <lightning-combobox name="searchTypes" value={searchedKey}
+            placeholder="All Types" options={searchOptions} onchange={handleSearch}>
+        </lightning-combobox>
+        </div>
+    </div>
+    </lightning-card>
+
+
+    <lightning-card title="Searched Jobs For You">
+        <template if:true={recruiters}>  
+        <!-- <div class="slds-scrollable_y"> -->
+            <lightning-layout horizontal-align="center" multiple-rows="true">
+                <template for:each={recruiters.data} for:item="recruiter">
+                    <lightning-layout-item key={recruiter.Id} size="12">
+                        <!-- <p>recruiter data is rendered</p> --><!--ongetjobselect={updateSelectedCard} selected-job-id={selectedJobId}-->
+                        <c-job-description-card recruiter-value={recruiter} ></c-job-description-card>
+                    </lightning-layout-item>
+                </template>
+            </lightning-layout>
+        <!-- </div> -->
+            
+        </template>
+    </lightning-card>
+</template>

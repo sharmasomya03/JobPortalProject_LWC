@@ -1,0 +1,56 @@
+<template>
+    <div class={tileClass} style="width:780px">
+      <ul class="slds-has-dividers_around-space">
+      <li class="slds-item">
+      <article class="slds-tile slds-tile_board">
+        <div class="slds-grid slds-gutters">
+          <div class="slds-col slds-size_1-of-12">
+        <lightning-icon  icon-name="custom:custom11" size="large"></lightning-icon>
+        </div>
+        <div class="slds-col slds-size_3-of-12">
+      <h3 class="slds-tile__title slds-truncate" title="Anypoint Connectors" onclick={handleDiv}>
+      <font size="4"><a href="#">{recruiterValue.Name}</a></font>
+      </h3>
+      <div class="slds-tile__detail">
+      <p class="slds-text-heading_small">{recruiterValue.Company_Name__c}</p>
+      </div>
+    </div>
+    <div class="slds-col slds-size_6-of-12"></div>
+      <div class="slds-col slds-size_2-of-12">
+        <p class="slds-text-heading_small"><lightning-icon  icon-name="utility:moneybag" size="small"></lightning-icon>&nbsp;{recruiterValue.Salary__c}/yr</p>
+        <p class="slds-text-heading_small"><lightning-icon  icon-name="utility:checkin" size="small"></lightning-icon>&nbsp;{recruiterValue.Job_Location__c}</p>
+      </div>
+    </div>
+    <div>
+    <span style="margin-left:10px">Posted On : {recruiterValue.Job_Posted_Date__c}</span>
+    <span style="float:right" class="placing" ><lightning-icon  icon-name="utility:bookmark_alt" size="small" onclick={handleSaveIcon}></lightning-icon></span>
+    </div>
+    <!-- <p class="slds-truncate" title="Job Posted">Posted on:{recruiterValue.Job_Posted_Date__c}</p> -->
+      </article>
+      </li>
+      </ul>
+      </div>
+  </template>
+
+
+
+  <!-- <div onclick={selectBoat} class={tileClass}>
+      <article class="slds-tile slds-tile_board">
+      <div class="lower-third">
+         Boat information goes here
+        <h1 class="slds-truncate slds-text-heading_medium">boat.Name</h1>
+        <h2 class="slds-truncate slds-text-heading_small ">boat.Contact__r.Name</h2>
+        <div class="slds-text-body_small">
+            Price: <lightning-formatted-number format-style="currency" currency-code="USD" maximum-fraction-digits="2" value="boat.Price__c">
+  
+            </lightning-formatted-number>
+        </div>
+      </div>
+      <div class="slds-text-body_small">
+          Length: boat.Length__c
+      </div>
+      <div class="slds-text-body_small">
+        Type: boat.BoatType__r.Name
+    </div>
+</article>
+    </div> -->

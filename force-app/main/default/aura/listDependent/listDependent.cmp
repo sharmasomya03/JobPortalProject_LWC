@@ -1,0 +1,58 @@
+<aura:component controller="dependentPicklistController" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId" access="global" >
+	 <aura:handler name="init" value="{!this}" action="{!c.doInit}" />   
+   
+    <aura:attribute name="getParentList" type="list" default="[]" description=""/>
+    <aura:attribute name="getChildList" type="list" default="[]"/>
+    <aura:attribute name="getPickListMap" type="map"/>
+    <aura:attribute name="getDisabledChildField" type="boolean" default="true"/>
+    
+    <aura:attribute name="getObjectName" type="string" default="Job_Recruiter__c"/>
+    <aura:attribute name="getParentFieldAPI" type="string" default="State__c"/>
+    <aura:attribute name="getChildFieldAPI" type="string" default="City__c"/>
+    <aura:attribute name="getParentFieldLabel" type="string" />
+    <aura:attribute name="getChildFieldLabel" type="string"/>
+    <aura:attribute name="getParentValue" type="string" default=""/>
+    <aura:attribute name="getChildValue" type="string" default=""/>
+    
+    
+   <lightning:card title="Dependent Picklist Demo">
+      
+               
+                <lightning:layoutItem size="12" padding="around-small">    
+                    <lightning:select name="parentField" aura:id="parentField"
+                                      value="{!v.getParentValue}"
+                                      label="{!v.getParentFieldLabel}"
+                                      onchange="{!c.ObjFieldByParent}">
+                        <aura:iteration items="{!v.getParentList}" var="value">
+                            <option value="{!value}">{!value}</option>
+                        </aura:iteration>
+                    </lightning:select>
+                </lightning:layoutItem>
+               
+          
+ 
+            
+                <lightning:layoutItem size="12" padding="around-small">
+                    <lightning:select name="childField"
+                                      value="{!v.getChildValue}"
+                                      label="{!v.getChildFieldLabel}"
+                                      disabled="{!v.getDisabledChildField}">
+                        <aura:iteration items="{!v.getChildList}" var="value">
+                            <option value="{!value}">{!value}</option>
+                        </aura:iteration>
+                    </lightning:select>
+                </lightning:layoutItem>
+              
+        
+ 
+
+ 
+            
+             
+              
+   
+ 
+  
+ 
+    </lightning:card> 
+</aura:component>

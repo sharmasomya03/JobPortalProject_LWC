@@ -1,0 +1,115 @@
+<aura:component implements="flexipage:availableForAllPageTypes,lightning:isUrlAddressable" access="global" controller="DependPicklist">
+    <aura:attribute name="bDisabledDependentFld" type="boolean" default="true"/> 
+    <aura:attribute name="getParentList" type="list" default="[]" description=""/>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    <aura:attribute name="getChildList" type="list" default="[]"/>
+    <aura:attribute name="getPickListMap" type="map"/>
+    <aura:attribute name="getDisabledChildField" type="boolean" default="true"/>
+    
+    <aura:attribute name="getObjectName" type="string" default="Job_Recruiter__c"/>
+    <aura:attribute name="getParentFieldAPI" type="string" default="State__c"/>
+    <aura:attribute name="getChildFieldAPI" type="string" default="City__c"/>
+    <aura:attribute name="getParentFieldLabel" type="string" />
+    <aura:attribute name="getChildFieldLabel" type="string"/>
+    <aura:attribute name="getParentValue" type="string" default=""/>
+    <aura:attribute name="getChildValue" type="string" default=""/>
+     
+    <aura:attribute name="option" type="List" default="[
+            {'label': '1', 'value': '1'},
+            {'label': '2', 'value': '2'},
+            {'label': '3', 'value': '3'},
+            {'label': '4', 'value': '4'},
+            {'label': '5', 'value': '5'},
+            ]"/>
+
+    <aura:attribute name="options" type="List" default="[
+            {'label': '01', 'value': '1LPA'},
+            {'label': '02', 'value': '2LPA'},
+            {'label': '03', 'value': '3LPA'},
+            {'label': '04', 'value': '4LPA'},
+            {'label': '05', 'value': '5LPA'},
+            {'label': '06', 'value': '6LPA'},
+            {'label': '07', 'value': '7LPA'},
+            {'label': '08', 'value': '8LPA'},
+            {'label': '09', 'value': '9LPA'},
+            {'label': '10', 'value': '10LPA'},
+            ]"/>
+
+    
+
+    <lightning:card title="Recruiter Page">
+        <div class="input-field-container">
+            <h3 class="font"><b>Job Recruiter Profile Page</b></h3> 
+            
+            <lightning:input class="input-field" type="text" name="txtCName" label="Company Name" />
+            <lightning:input class="input-field" type="text" name="txtJTitle" label="Job Title" onchange="{!c.handleJobTitle}" />
+            <lightning:textarea  class="input-field" type="text" label="Job Description" onchange="{!c.handleJobTitle}" />
+            <lightning:input class="input-field" type="date" label="Job Posted Date" onchange="{!c.handlePostedDate}" />
+            <lightning:input class="input-field" type="date" label="Job End Date" onchange="{!c.handleEndDate}" />
+            <lightning:input class="input-field" type="date" label="Job Location" onchange="{!c.handleLocation}" />
+
+            <lightning:combobox name="progress" label="Experience" value="inProgress" placeholder="Select Progress" options="{! v.option }" onchange="{! c.handleExperience }"/>
+            <lightning:combobox name="prog" label="Salary" placeholder="Select Salary" options="{! v.options }" onchange="{! c.handleSalary }"/>
+
+            <lightning:input class="input-field" type="number" label="Phone" onchange="{!c.handlePhone}" />
+            <lightning:textarea class="input-field" label="Address" onchange="{!c.handleAddress}"/>
+            
+            <lightning:card title="Dependent Picklist Demo">
+              <div class="slds-grid slds-wrap"> 
+                   <div class="slds-col slds-col_size-6-of-12">
+                        
+                        <lightning:layoutItem size="12" padding="around-small">    
+                            <lightning:select name="parentField" aura:id="parentField"
+                                              value="{!v.getParentValue}"
+                                              label="{!v.getParentFieldLabel}"
+                                              onchange="{!c.ObjFieldByParent}">
+                                <aura:iteration items="{!v.getParentList}" var="value">
+                                    <option value="{!value}">{!value}</option>
+                                </aura:iteration>
+                            </lightning:select>
+                        </lightning:layoutItem>
+                       </div> 
+                  
+                     <div class="slds-col slds-col_size-6-of-12">
+                       
+                        <lightning:layoutItem size="12" padding="around-small">
+                            <lightning:select name="childField"
+                                              value="{!v.getChildValue}"
+                                              label="{!v.getChildFieldLabel}"
+                                              disabled="{!v.getDisabledChildField}">
+                                <aura:iteration items="{!v.getChildList}" var="value">
+                                    <option value="{!value}">{!value}</option>
+                                </aura:iteration>
+                            </lightning:select>
+                        </lightning:layoutItem>
+                  </div>    
+              </div> 
+            
+            </lightning:card>
+          </div>
+          </lightning:card>
+          </aura:component>
+            <!--Controller Field
+              <lightning:layoutItem size="4" padding="around-small">
+                <lightning:select name="controllerFld"
+                                  label="State"
+                                  value="{!v.objDetail.State__c}"
+                                  onchange="{!c.onControllerFieldChange}">
+                   <aura:iteration items="{v.listControllingValues}" var="val">
+                        <option value="{!val}">{!val}</option>
+                    </aura:iteration>           
+                </lightning:select>
+              </lightning:layoutItem>
+
+              Dependent Field
+              <lightning:layoutItem size="4" padding="around-small">
+                <lightning:select name="dependentFld"
+                                  label="City"
+                                  value="{!v.objDetail.City__c}"
+                                  disabled="bDisabledDependentFld">
+                <aura:iteration items="{!v.listDependingValues}" var="val">
+                    <option value="{!val}">{!val}</option>
+                </aura:iteration>
+                 </lightning:select>
+              </lightning:layoutItem>
+            </div> -->

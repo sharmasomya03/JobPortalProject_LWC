@@ -1,0 +1,132 @@
+<aura:component implements="flexipage:availableForAllPageTypes,force:hasRecordId" controller="jobSeekerSearchClass"> 
+  <aura:handler name="init" value="{!this}" action="{!c.handleKey}" />  
+<aura:attribute name="seeker" type="List" ></aura:attribute>
+  <aura:attribute name="searchKey" type="String"></aura:attribute>
+  <aura:attribute name="recordId" type="Id" access="public"/>
+  <aura:attribute name="Id" type="String" />
+  <aura:attribute name="UserId" type="String" />
+  <aura:attribute name="Name" type="String" />
+  <aura:attribute name="Cname" type="String" />
+  <aura:attribute name="Location" type="String" />
+  <aura:attribute name="Email" type="String" />
+  <aura:attribute name="JobPostedDate" type="date" />
+  <aura:attribute name="JobEndDate" type="date" />
+  <aura:attribute name="Salary" type="integer" />
+  <aura:attribute name="Experience" type="integer" />
+  <aura:attribute name="State" type="String" />
+  <aura:attribute name="City" type="String" />
+  <aura:attribute name="JobInfo" type="boolean" default="false" />
+  <aura:attribute name="closeModel" type="boolean" />
+  <aura:attribute name="selecteditem" type="String"></aura:attribute>
+  <aura:attribute name="tituserId" type="String" />
+  <aura:attribute name="id1" type="String" />
+  <!-- <aura:attribute name="seekUserId" type="String" /> -->
+  <!-- <aura:attribute name="seekRecId" type="String" /> -->
+  
+  <!-- recID,recUserID,seekID,seekUserID -->
+  <aura:attribute type="String" name="seekUserId" />
+  <aura:attribute type="String" name="seekRecordId" />
+  <aura:attribute name="recUserId" type="String" />
+  <aura:attribute name="recRecordId" type="String" />
+  <aura:attribute name="chkSaved" type="boolean" default="true" />
+  <aura:handler name="render" value="{!this}" action="{!c.onRender}" /> 
+
+
+
+        <lightning:card>
+         
+          <lightning:layout multipleRows="true" verticalAlign="end">
+          <lightning:layoutItem size="4" padding="around-small">
+            <lightning:input type="search" name="searchSeeker" label="Enter Job Title" aura:id="listsearch" 
+                  value="{!v.searchKey}"
+                  onchange="{!c.handleKey}"> 
+    
+            </lightning:input>
+          </lightning:layoutItem>
+            <!-- <lightning:button label="Search" variant="brand" onclick="{!c.searchKey}"></lightning:button> -->
+    
+          </lightning:layout>
+       
+       
+        <ul>
+          <aura:iteration items="{!v.seeker}" var="tit" >
+         
+                       <div class="searchSection"  >
+                        <a onclick="{!c.handleClick}" data-id="{!tit.Id}" data-uid="{!tit.UserId__c}" data-name="{!tit.Name}" data-cname="{!tit.Company_Name__c}" data-location="{!tit.Job_Location__c}"  data-email="{!tit.Email__c}" data-jobposteddate="{!tit.Job_Posted_Date__c}" data-jobenddate="{!tit.Job_End_Date__c}" data-salary="{!tit.Salary__c}" data-experience="{!tit.Experience__c}" data-state="{!tit.State__c}" data-city="{!tit.City__c}">
+                       
+                          <h2 class="searchTitle" >{!tit.Name}</h2>
+                       
+                          <div class="searchDesc">Lorem ipsum dolor  </div>
+                          <div class="searchInfoBar">
+                              <span class="searchName"> {!tit.Company_Name__c}</span>
+                              <span class="searchLocation">{!tit.Job_Location__c}</span>
+                          </div>
+                        </a>
+                      
+                  </div>
+                
+           
+              
+     </aura:iteration>
+  </ul>
+</lightning:card> 
+
+ <aura:if isTrue="{!v.JobInfo}"> 
+             <div class="slds-m-around_xx-large">       
+       
+             
+                   <div class="slds-modal__container">
+                     
+                      <header class="slds-modal__header">
+                          <lightning:buttonIcon iconName="utility:close"
+                           onclick="{! c.closeModel }"
+                           alternativeText="close"
+                           variant="bare-inverse"
+                           class="slds-modal__close"/>
+                          
+                      </header>
+                      <div style="background-color: #D3D3D3;">
+                        <pre style="margin-left:10px ;">
+                         
+                          <p><b>recordId :         </b>{!v.recordId} </p> 
+                          <p><b>Id :             </b>{!(v.Id)} </p>   
+                          <p><b>UserId :         </b>{!(v.UserId)} </p>    
+                          <p><b>Job Title :      </b>{!(v.Name)} </p>
+                          <p><b>Company Name :   </b>{!(v.Cname)}</p>
+                          <p><b>Job Location :  </b> {!(v.Location)}</p>
+                          <p><b>Email :         </b> {!(v.Email)}</p>
+                          <p><b>JobPostedDate : </b> {!(v.JobPostedDate)}</p>
+                          <p><b>JobEndDate :    </b> {!(v.JobEndDate)}</p>
+                          <p><b>Salary :        </b> {!(v.Salary)}</p>
+                          <p><b>Experience :    </b> {!(v.Experience)}</p>
+                          <p><b>Sate       :    </b> {!(v.State)}</p>
+                          <p><b>City       :    </b> {!(v.City)}</p>
+
+                            
+                        </pre>
+                      
+                    </div>
+                          
+                     
+                      <footer class="slds-modal__footer">
+                          <lightning:button variant="neutral" 
+                          label="Cancel"
+                          title="Cancel"
+                          onclick="{! c.closeModel }"/>
+                          <lightning:button variant="brand" 
+                          label="Save"
+                          title="Save"
+                          onclick="{! c.handleSave }"/>
+                          <lightning:button variant="brand" 
+                          label="Apply"
+                          title="Apply"
+                          onclick="{! c.handleApply}"/>
+                      </footer>
+                  </div>
+            
+       
+         
+  </div>
+
+</aura:if> 
+</aura:component>

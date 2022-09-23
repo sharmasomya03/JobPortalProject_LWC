@@ -1,0 +1,30 @@
+/* .input-combo
+{
+   
+} */
+.container
+{
+    width: 200%;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+   
+}
+
+.card{
+    
+    width: 200%;
+    float: auto;
+   
+    
+    
+}
+
+/* .slds-align_absolute-center{
+    width: 1000px;
+} */
+
+.combo{
+    margin: 50px;
+}

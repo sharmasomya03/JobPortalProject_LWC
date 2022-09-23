@@ -1,0 +1,53 @@
+<template>
+    <lightning-card title="Applied Jobs"  >
+   
+        
+        <pre style="border: 2px solid grey;">
+         <div style="background-color: #bebebe;"><b> Company Name                 Job Position</b></div>
+        <ul>
+         <template for:each={lst} for:item="ls">              
+             
+             <li key={ls.Id}>
+                 <div class="grid-container" >
+                     
+                     <p>{ls.jobTitle.Company_Name__c}</p>
+                     <p>{ls.jobTitle.Name}</p>
+                 </div>
+           </li>
+             
+     </template>
+ </ul>
+ 
+ </pre>
+ 
+    </lightning-card>
+
+
+
+
+   
+
+        <lightning-card  title="Saved Jobs">
+            
+            <pre style="border: 2px solid grey;">
+                <div style="background-color: #bebebe;"><b> Company Name                 Job Position</b></div>
+                
+            
+            <ul>
+             <template for:each={showSavedDetails} for:item="SavedJobs">
+                <li key={SavedJobs.Id}>
+                    <div class="grid-container" >
+                        
+                        <p>{SavedJobs.jobTitle.Company_Name__c}</p>
+                        <p>{SavedJobs.jobTitle.Name}</p>
+                        <button  style="width: 50px;height:30px;" data-id={SavedJobs.id}  onclick={handleApply}>Apply</button>
+                    </div>
+                    
+                    </li>
+           </template>
+        </ul>
+    </pre>
+        </lightning-card>
+        
+        
+    </template>

@@ -1,0 +1,31 @@
+<template>
+    
+    <template if:true={ShowDetails}>
+    
+       
+       
+     
+    <template for:each={lst} for:item="ls">
+        
+      
+        <div  key={ls.Id} class="text-blue">
+            <pre style="margin-left:10px ; " >
+              <div class="Details">
+           <p class="back-color"><b>Name :  </b> {ls.seekerName.Name}</p><br>
+           <p class="back-color"><b>Last Name :  </b>{ls.seekerName.Last_Name__c}</p><br>
+           <p class="back-color"><b>Job Skills :  </b>{ls.seekerName.Job_Skills__c}</p><br>
+           <p class="back-color"><b>Job Location :  </b>{ls.seekerName.Job_Location__c}</p><br>
+           <p class="back-color"><b>Email : </b> {ls.seekerName.Email__c}</p><br>
+           <p class="back-color"><b>EXPERIENCE :    </b> {ls.seekerName.Experience__c}</p><br>
+           <!-- <p><b>Cover Letter :    </b> {ls.seekerName.Cover_Letter__c}</p><br> -->
+           
+        </div> 
+            </pre>
+        </div>
+    </template>
+    
+   
+        
+
+</template>
+</template>

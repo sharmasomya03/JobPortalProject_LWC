@@ -1,0 +1,25 @@
+h1{
+    display: block;
+  font-size: 1.2em;
+  margin-top: 0.50em;
+  /* margin-bottom: 0.67em; */
+  margin-left: 30px;
+  margin-right: 0;
+  font-weight: bold;
+}
+.new1{
+    border-top: 1px solid red;
+}
+ .iconsd{
+    height: 11.333333015441895px;
+    width: 12px;
+ }
+/* .h1{
+    display: block;
+  font-size: 2em;
+  margin-top: 0.67em;
+  margin-bottom: 0.67em;
+  margin-left: 0;
+  margin-right: 0;
+  font-weight: bold;
+} */

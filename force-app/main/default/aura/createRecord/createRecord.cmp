@@ -1,0 +1,39 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId" access="global" controller="JobRecruiterClass">
+
+
+<!--<aura:attribute name ='JobPostList' type="Job_Recruiter__c"  default="{'sobjectType' : 'Job_Recruiter__c',
+                                                                         'compName' : '',
+                                                                         'jobTitle': '',
+                                                                         'jobDesc':'',
+                                                                         'jobPost': '',
+                                                                          'jobEnd': '',
+                                                                         'jobLoc': '',
+                                                                         'exp': '',
+                                                                        'ctc': '',
+                                                                        }"></aura:attribute> -->
+
+            
+            
+            <aura:attribute name="compName" type="String"></aura:attribute>
+             <aura:attribute name="jobTitle" type="String" ></aura:attribute>
+            <aura:attribute name="jobDesc" type="String" ></aura:attribute>
+            <aura:attribute name="jobPost" type="Date" ></aura:attribute>
+            <aura:attribute name="jobEnd" type="Date" ></aura:attribute>
+            <aura:attribute name="jobLoc" type="String" ></aura:attribute>
+            <aura:attribute name="exp" type="Integer" ></aura:attribute>  
+            <aura:attribute name="ctc" type="Integer" ></aura:attribute>
+           
+            
+  
+
+   <lightning:input class="input-field" name="jobcomp" type="text" label="CompanyName" value="{!v.compName}"></lightning:input>
+   <lightning:input class="input-field" name="jobtit" type="text" label="Job Title"  value="{!v.jobTitle}"></lightning:input>
+   <lightning:input class="input-field" name="jobDes" type="text" label="Job Description" value="{!v.jobDesc}"></lightning:input>
+   <lightning:input class="input-field" name="jobpd" type="date" label="Job Posted Date"  value="{!v.jobPost}"></lightning:input>
+   <lightning:input class="input-field" name="jobed" type="date" label="Job End Date"  value="{!v.jobEnd}"></lightning:input>
+   <lightning:input class="input-field" name="jobloc" type="text" label="Job Location"  value="{!v.jobLoc}"></lightning:input>
+   <lightning:input class="input-field" name="jobexp" type="number" label="Experience"  value="{!v.exp}"></lightning:input>
+   <lightning:input class="input-field" name="jobctc" type="number" label="CTC"  value="{!v.ctc}"></lightning:input>
+   <lightning:button variant="brand" label="Create" title="Brand action" onclick="{!c.CreateAccount}"></lightning:button>
+  
+</aura:component>

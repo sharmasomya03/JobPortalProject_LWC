@@ -1,0 +1,29 @@
+<aura:component implements="flexipage:availableForAllPageTypes" controller="jobSeekerAppliedJob" >
+
+    <aura:attribute name="jobsave" type="List"></aura:attribute> 
+    <aura:attribute name="savejoblist" type="List"></aura:attribute> 
+    
+
+
+ <lightning:card title="Save jobs">
+
+    <pre style="border: 2px solid grey;">
+        <div style="background-color: #bebebe;"><b> Company Name                 Job Position</b></div>
+        
+
+
+       <aura:iteration items="{!v.jobsave}" var="SavedJobs" >
+        <span class="grid-container">
+            <div class="searchSection"  >
+                <div class="font-color-style">
+         
+        <button onclick="{!c.Click}" data-id="{!SavedJobs.Id}" data-name="{!SavedJobs.Name}">
+            <h2>{!SavedJobs.Name}</h2>
+        </button>
+                 </div>
+            </div>
+        </span>
+        </aura:iteration>
+    </pre>
+ </lightning:card>
+</aura:component>

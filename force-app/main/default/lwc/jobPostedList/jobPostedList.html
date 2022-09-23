@@ -1,0 +1,46 @@
+<template>
+    <lightning-card>
+        <h2 style="font-size: 18px;"><b>Job Posted List</b></h2>
+        <pre style="border: 2px solid grey;">
+    <ul>
+    <template for:each={jobList} for:item="jl">              
+               
+        <li key={jl.Id}>
+            <span class="grid-container">
+            <div class="searchSection"  >
+                <div class="font-color-style">
+             <a onclick={Click} data-id={jl.Id} data-name={jl.Name}>
+                    
+                <h2>{jl.Name}</h2>
+                </a>
+            </div>
+            </div>
+            </span>
+      </li>
+        </template>
+    </ul>
+</pre>
+</lightning-card>
+    <template if:true={JobInfo}>
+       <lightning-card>
+        <template for:each={jobsk} for:item="jil"  >              
+               
+            <div key={jil.Id}>
+                <div class="searchSection"  >
+                    <div class="font-color-style">
+                    <h2>{jil.SeekerName__r.Name}</h2>
+                 <!-- <a onclick={Click} data-id={jil.Id} data-name={jil.Name} data-seekname={jil.SeekerName__r.Name}>
+                        
+                    <h2>{jil.SeekerName__r.Name}</h2>
+                    </a> -->
+                </div>
+                </div>
+            </div>
+        </template>
+
+    </lightning-card>
+    </template>
+
+ 
+
+</template>

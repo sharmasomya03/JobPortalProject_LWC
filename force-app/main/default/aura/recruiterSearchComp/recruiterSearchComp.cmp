@@ -1,0 +1,42 @@
+<aura:component implements="flexipage:availableForAllPageTypes ,force:hasrecordid" controller="JobRecruiterSearchClass">
+     
+    <aura:attribute name="seeker" type="List" ></aura:attribute>
+    <aura:attribute name="searchKey" type="String"></aura:attribute>
+
+
+    <lightning:card>
+        <lightning:layout multipleRows="true" verticalAlign="end">
+        <lightning:layoutItem size="4" padding="around-small">
+          <lightning:input type="search" name="searchSeeker" label="Enter Job Title" aura:id="listsearch" 
+                value="{!v.searchKey}"
+                onchange="{!c.handleKey}"> 
+  
+          </lightning:input>
+        </lightning:layoutItem>
+          <!-- <lightning:button label="Search" variant="brand" onclick="{!c.searchKey}"></lightning:button> -->
+  
+        </lightning:layout>
+     
+     
+      <ul>
+        <aura:iteration items="{!v.seeker}" var="tit" >
+       
+                     <div class="searchSection"  >
+                      <a onclick="{!c.handleClick}" data-id="{!tit.id}" data-uid="{!tit.UserId__c}" data-name="{!tit.Name}" data-cname="{!tit.Company_Name__c}" data-location="{!tit.Job_Location__c}"  data-email="{!tit.Email__c}" data-jobposteddate="{!tit.Job_Posted_Date__c}" data-jobenddate="{!tit.Job_End_Date__c}" data-salary="{!tit.Salary__c}" data-experience="{!tit.Experience__c}" data-state="{!tit.State__c}" data-city="{!tit.City__c}">
+                       <h2 class="searchTitle" >{!tit.Name}</h2>
+                        <div class="searchDesc">Lorem ipsum dolor  </div>
+                        <div class="searchInfoBar">
+                            <span class="searchName"> {!tit.Company_Name__c}</span>
+                            <span class="searchLocation">{!tit.Job_Location__c}</span>
+                        </div>
+                      </a>
+                    
+                </div>
+              
+         
+            
+   </aura:iteration>
+</ul>
+</lightning:card> 
+
+</aura:component>	

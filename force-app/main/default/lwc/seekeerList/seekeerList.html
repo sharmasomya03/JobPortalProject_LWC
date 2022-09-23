@@ -1,0 +1,51 @@
+<template>
+     <!--<lightning-card>
+        
+     
+            <ul>
+                <template for:each={seekerList} for:item="seek">              
+                    
+                    <li key={seek.Id}>
+                        <div class="searchSection"  >
+                          
+                            <a onclick={handleClick} data-id={seek.Id} data-name={seek.Name} data-email={seek.Email}  >
+                                <h2 class="searchTitle">{seek.Name}</h2>
+                                <h2 class="searchTitle">{seek.Id}</h2>
+                                <h2 class="searchTitle">{seek.Experience}</h2>
+                                
+                                </a>
+                        </div>
+                      </li>
+     </template>
+     </ul>
+     </lightning-card>
+    -->
+          <template for:each={lst} for:item="ls">              
+        
+                <h1 key={ls.id}>
+                    <a onclick={handleClick} data-id={ls.id} data-name={ls.seekerName.Name} >
+                   
+                    <span class="grid-container">
+                        
+                        <div class="font-color-style">
+                            
+                            <div class="inner-element-font">{ls.seekerName.Name}</div>
+                        </div>
+                        <div class="font-color-style">
+                           
+                            <div class="inner-element-font">{ls.jobTitle.Name}</div>
+                        </div>
+                    </span> 
+                </a>
+                </h1>
+            
+        </template>
+
+
+
+
+    
+ 
+
+    
+</template>

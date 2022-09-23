@@ -1,0 +1,48 @@
+<aura:component controller= "jobSeekerAppliedJob" implements="flexipage:availableForAllPageTypes,force:hasRecordId,force:appHostable">
+   
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"  /> 
+    <aura:attribute name="jobsApplied" type="string" />
+   
+    <aura:attribute name="res1" type="List"></aura:attribute>
+   
+    
+       
+
+    <lightning:card title="Applied jobs">
+
+        <ul > <pre style="border: 2px solid grey;">
+            <div style="background-color: #bebebe;"><b> Company Name     Job Position</b></div>
+            
+    
+    
+          
+        </pre>
+
+            <aura:iteration items="{!v.jobsApplied}" var="lil" >
+
+
+                <span class="grid-container">
+                    <div class="font-color-style">
+                       
+                        <div class="inner-element-font">     {!lil.job_Title__r.Name}</div>
+                    </div>
+                
+                    <div class="font-color-style">
+                        
+                        <div class="inner-element-font">      {!lil.job_Title__r.Company_Name__c}</div>
+                    </div>
+                    
+                </span> 
+            
+           
+            </aura:iteration>
+        </ul>
+       
+     </lightning:card>
+    <!-- <aura:attribute name="fields" type="string[]" default="['FirstName', 'LastName','Email', 'Phone']" />
+        <lightning:recordForm objectApiName="Contact" fields="{!v.fields}" onsuccess="{!c.ShowSuccess}">
+
+        </lightning:recordForm> -->
+
+
+</aura:component>

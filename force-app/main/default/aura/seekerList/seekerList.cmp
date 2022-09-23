@@ -1,0 +1,43 @@
+<aura:component controller="AppliedJobsClass1" implements="flexipage:availableForAllPageTypes">
+<aura:handler name="init" value="{!this}" action="{!c.loadList}"/>
+<aura:attribute name="lst" type="List"></aura:attribute>
+<aura:attribute name="st" type="List"></aura:attribute>
+        <lightning:card title="seekerList">
+        
+
+       
+
+            <span class="grid-container">
+                <div class="font-color-style">
+                <header class="inner-element-font" >seekerName</header>
+                </div>
+                <div class="font-color-style">
+                <header class="inner-element-font">jobTitle</header>
+            </div>
+            </span>
+    <aura:iteration items="{!v.lst}" var="ls">
+            <!-- <a onclick="{!c.handleClick}" data-id="{!ls.id}" data-name="{!ls.seekerName.Name}" > -->
+           
+            <span class="grid-container">
+                
+                <div class="font-color-style">
+                    
+                    <div class="inner-element-font"> {!ls.SeekerName__r.Name}</div>
+                </div>
+                <div class="font-color-style">
+                   
+                    <div class="inner-element-font"> {!ls.job_Title__r.Name}</div>
+                </div>
+            </span> 
+        <!-- </a> -->
+        
+</aura:iteration>   
+
+
+</lightning:card>
+
+
+
+
+
+</aura:component>

@@ -1,0 +1,47 @@
+<aura:component implements="flexipage:availableForAllPageTypes" controller="jobList">
+<aura:attribute name="jobList" type="List"></aura:attribute> 
+<aura:attribute name="jobsk" type="List"></aura:attribute> 
+<aura:attribute name="Name" type="String"></aura:attribute>
+<aura:attribute name="jlId" type="String"></aura:attribute>
+<aura:attribute name="jlName" type="String"></aura:attribute>
+<aura:attribute name="JobInfo" type="boolean" default="false"></aura:attribute>
+<aura:attribute name="selecteditem" type="String"></aura:attribute>
+<aura:handler name="init" value="{!this}" action="{!c.loadList}"/>
+<lightning:card title="JobList">
+   
+        
+    <ul>
+    <aura:iteration items="{!v.jobList}" var="jl" >
+        <span class="grid-container">
+            <div class="searchSection"  >
+                <div class="font-color-style">
+         
+        <a onclick="{!c.Click}" data-id="{!jl.Id}" data-name="{!jl.Name}">
+            <h2>{!jl.Name}</h2>
+        </a>
+    </div>
+</div>
+</span>
+              
+     </aura:iteration>
+     </ul>
+     
+   </lightning:card>
+
+   <aura:if isTrue="{!v.JobInfo}">
+    <lightning:card>
+
+        <aura:iteration items="{!v.jobsk}" var="jil">
+            <div class="searchSection"  >
+                <div class="font-color-style">
+
+            <h2>{!jil.SeekerName__r.Name}</h2>
+        </div>
+    </div>
+            
+        </aura:iteration>
+    </lightning:card>
+
+   </aura:if>
+   
+</aura:component>	
