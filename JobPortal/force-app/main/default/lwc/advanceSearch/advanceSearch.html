@@ -1,0 +1,81 @@
+<template>
+        <lightning-card title="Job Search">
+           <lightning-layout multiple-rows="true" vertical-align="end">
+               <lightning-layout-item size="4" padding="around-small">
+                    
+                   <lightning-input type="search" label="Enter Job title"
+                       value={searchKey} 
+                       onchange={handelSearchKey}> 
+                   </lightning-input>
+               </lightning-layout-item >
+   
+               <lightning-layout-item size="2" padding="around-small">
+                   
+                    <lightning-button label="Search" variant="brand" onclick={SearchJobHandler}>
+   
+                   </lightning-button>
+               </lightning-layout-item>
+               
+            
+           </lightning-layout>
+       </lightning-card>   
+       
+   
+       
+            <template if:true={HideTable}>
+               
+           <lightning-card>
+              
+           <ul >
+               
+               <!-- <div>Name</div>
+               <div>Company Name</div> -->
+               <template for:each={titleList} for:item="tit">              
+                   
+                   <li key={tit.Id}>
+                       <span class="grid-container">
+                           <div class="font-color-style">
+                               Name<div class="inner-element-font">{tit.Name}</div>
+                           </div>
+                           <div class="font-color-style">
+                               Company Name<div class="inner-element-font">{tit.Company_Name__c}</div>
+                           </div>
+                           <div class="font-color-style">
+                               Email<div class="inner-element-font">{tit.Email__c} </div>
+                           </div>
+                           <div class="font-color-style">
+                               Job Posted<div class="inner-element-font">{tit.Job_Posted_Date__c}</div>
+                           </div>
+                           <div class="font-color-style">
+                               Job End<div class="inner-element-font">{tit.Job_End_Date__c}</div>
+                           </div>
+                           <div class="font-color-style">
+                               salary<div class="inner-element-font">{tit.Salary__c}</div>
+                           </div>
+                           <div class="font-color-style">
+                               Experience<div class="inner-element-font"> {tit.Experience__c}</div>
+                           </div>
+                           <div class="font-color-style">
+                               Job Location<div class="inner-element-font">{tit.Job_Location__c}</div>
+                           </div>
+                       </span>
+    
+   
+                       <div class="button-style">
+                           <lightning-button label="Save" variant="brand"  data-id={tit.Name} onclick={handlesave}></lightning-button>&nbsp;&nbsp;&nbsp;
+                           <lightning-button label="Apply" variant="brand" onclick={handleapply}></lightning-button>
+                       </div>
+                   
+               
+   
+                       
+                   </li>
+               </template>
+               
+           </ul>
+           
+       </lightning-card> 
+   
+      </template> 
+   
+   </template>

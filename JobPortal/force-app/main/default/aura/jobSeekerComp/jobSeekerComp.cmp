@@ -1,0 +1,35 @@
+<aura:component implements="flexipage:availableForAllPageTypes" controller="JobSeekerClass">
+    <aura:attribute name="attGender" type="List" default="[{'label':'Male','value':'male'},{'label':'Female','value':'female'}]" />
+    <aura:attribute name="selectGender" type="String" default="male" />
+    <aura:attribute name="data" type="List" />
+    <aura:attribute name="options1" type="List" default="[{'label':'1','value':'1'},{'label':'2','value':'2'},{'label':'3','value':'3'},{'label':'4','value':'4'},{'label':'5','value':'5'}]" />
+    <aura:attribute name="options2" type="List" default="[{'label':'C++','value':'cpp'},{'label':'JS','value':'js'},{'label':'AWS','value':'aws'}]" />
+
+    <aura:attribute name="selectExp" type="String" />
+    <aura:attribute name="selectSkills" type="String" />
+
+    <lightning:card>
+        <lightning:input label="First Name" aura:id="txtFname" />
+        <lightning:input label="Last Name" aura:id="txtLname" />
+        <lightning:radioGroup label="Gender" aura:id="rdoGender" options= "{!v.attGender}" value="{!v.selectGender}" type="radio" />
+        <lightning:input label="DOB" aura:id="dtDob" type="date" />
+        <lightning:textarea label="Cover Letter" aura:id="txtCoverLetter" />
+
+        <lightning:combobox label="Experience" aura:id="cmbExperience" placeholder="Select Year" options="{!v.options1}"  value="{!v.selectExp}" /> 
+        <lightning:combobox label="Job Skills" aura:id="cmbJobSkills" placeholder="Select Skills" options="{!v.options2}"  value="{!v.selectSkills}" />
+
+        <lightning:input label="Job Location" aura:id="txtJobLoc" />
+        <lightning:input label="Email" aura:id="txtEmail" type="Email" />
+        <lightning:input label="Phone" aura:id="numberPhone" type="number" />
+    
+        <lightning:button label="Submit" onclick="{!c.handleSubmit}" />
+        <lightning:button label="Reset" onclick="{!c.handleReset}" /> <br />
+        <div>
+            {!v.data}
+        </div>
+
+
+
+    </lightning:card>
+
+</aura:component>	

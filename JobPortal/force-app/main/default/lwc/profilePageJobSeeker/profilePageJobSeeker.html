@@ -1,0 +1,31 @@
+<template>
+    <div class="input-field-container">
+     <h1><b>Job Seeker Profile Page</b></h1>
+        
+                     <lightning-record-edit-form 
+                  
+                                    object-api-name={objectName}
+                                   
+                                    >
+                                    <lightning-messages></lightning-messages>
+                                
+                                <lightning-input-field class="input-field" field-name={fields.nameField}></lightning-input-field>
+                                <lightning-input-field class="input-field" field-name={fields.lastName}></lightning-input-field>
+                                <lightning-input-field class="input-field" field-name={fields.gender}></lightning-input-field>
+                                <lightning-input-field class="input-field" field-name={fields.DateOfBirth}></lightning-input-field>
+                                 
+                                <lightning-input-field class="input-field" field-name={fields.coverLetter}></lightning-input-field>
+                                <lightning-input-field class="input-field" field-name={fields.experience}></lightning-input-field>
+                                <lightning-input-field class="input-field" field-name={fields.ctcExpected}></lightning-input-field>
+                                <lightning-input-field class="input-field" field-name={fields.jobSkills}></lightning-input-field>
+                                <lightning-input-field class="input-field" field-name={fields.emailField}></lightning-input-field>
+                                <lightning-input-field class="input-field , phonevali" field-name={fields.phoneField}></lightning-input-field>
+                                <lightning-input-field class="input-field" field-name={fields.jobLocation}></lightning-input-field>
+                                <div class="button-container">
+                                <lightning-button onclick={handleReset} class="slds-m-around_xx-small" label="cancel"></lightning-button>
+                                <lightning-button name="" class="slds-m-around_xx-small" label="Save" type="submit"></lightning-button>
+                                </div>
+                                </lightning-record-edit-form>
+                               
+</div>
+</template>

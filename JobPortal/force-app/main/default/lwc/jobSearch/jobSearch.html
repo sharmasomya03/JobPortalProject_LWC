@@ -1,0 +1,22 @@
+<template>
+    <template if:true={selectRoleCard}>
+    <lightning-card title="Select a Role">
+        <lightning-layout horizontal-align="center">
+            <lightning-layout-item class="slds-align-middle" size=3>
+                <lightning-combobox class="slds-align-middle" name="profileTypes" value={selectedProfileTypes}
+                    placeholder="All Types" options={searchOptions} onchange={handleSearch}>
+                </lightning-combobox>
+            </lightning-layout-item>
+        </lightning-layout>
+    </lightning-card>
+    </template>
+    <template if:true={seeker}>
+        <!-- SEEKER page will go here!! -->
+        <c-record-edit-form></c-record-edit-form>
+    </template>
+
+    <template if:true={recruiter}>
+        <!-- RECRUITER page will go here!! -->
+        <c-profile-page-job-recruiter></c-profile-page-job-recruiter>
+    </template>
+</template>

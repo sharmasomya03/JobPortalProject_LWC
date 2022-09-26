@@ -1,0 +1,32 @@
+<template>
+  <div class="input-field-container">
+    <lightning-input class="input-field" type="text" label="Company Name" onchange={handleCompName}></lightning-input>
+    <lightning-input class="input-field" type="text" label="Job Title" onchange={handleJobTitle}></lightning-input>
+    <lightning-textarea class="input-field" label="Job Description" onchange={handleJobDesc}></lightning-textarea>
+    <lightning-input class="input-field" type="date" label="Job Posted Date" onchange={handleJobPostedDate}></lightning-input>
+    <lightning-input class="input-field" type="date" label="Job End Date" onchange={handleJobEndDate}></lightning-input>
+    <lightning-input class="input-field" type="text" label="Job Location" onchange={handleJobLocation}></lightning-input>
+    <lightning-input class="input-field" type="number" label="Experience" onchange={handleExperience}></lightning-input>
+    <lightning-input class="input-field" type="number" label="CTC" onchange={handleCtc} ></lightning-input>
+    <lightning-input class="input-field" type="text" label="City" onchange={handleCity}></lightning-input>
+    <lightning-input class="input-field" type="email" label="Email" onchange={handleEmail}></lightning-input>
+    <lightning-input class="input-field" type="number" label="Phone" onchange={handlePhone}></lightning-input>
+    <lightning-textarea class="input-field" label="Address" onchange={handleAddress}></lightning-textarea>
+    
+
+<!-- <template if:true={Job_TypePicklist.data}>
+  <lightning-combobox name="progress" label="Job Type" value={jobtype} placeholder="Select Job Type"
+      options={Job_TypePicklist.data.values} onchange={handleJobtype}>
+  </lightning-combobox>
+</template> -->
+<div class="button-container">
+<lightning-button label="Submit" variant="brand" onclick={handleSave}></lightning-button>
+<lightning-button  label="Reset" variant="brand" onclick={handleClear}></lightning-button>
+</div>
+</div>
+
+<!-- <lightning-card style="display: flex;flex-direction:column;justify-content:center;" title="Job Recruiter Details"> -->
+
+<!-- </lightning-card> -->
+
+</template>

@@ -1,0 +1,62 @@
+<template>
+    <div class="input-field-container">
+         <h3 class="font"><b>Job Recruiter Profile Page</b></h3> 
+        <lightning-input class="input-field" type="text" label="Company Name" onchange={handleCompName} value={compName}></lightning-input>
+        <lightning-input class="input-field" type="text" label="Job Title" onchange={handleJobTitle} value={jobTitle}></lightning-input>
+        <lightning-textarea class="input-field" label="Job Description" onchange={handleJobDesc} value={jobDesc}></lightning-textarea>
+        <lightning-input class="input-field" type="date" label="Job Posted Date" onchange={handleJobPostedDate}
+        value={jobPost}></lightning-input>
+        <lightning-input class="input-field" type="date"  label="Job End Date" onchange={handleJobEndDate} value={jobEnd}></lightning-input>
+        <lightning-input class="input-field" type="text" label="Job Location" onchange={handleJobLocation} value={jobLoc}></lightning-input>
+        <lightning-combobox name="Experience" class="input-field" 
+                label="Experience"
+                value={exp}
+                placeholder="Select Experience"
+                options={option}
+                onchange={handleExpChange}>
+        </lightning-combobox>
+        <lightning-combobox name="Salary" class="input-field" 
+                label="Salary"
+                value={salary}
+                placeholder="Select Salary"
+                options={options}
+                onchange={handleSalaryChange}>
+        </lightning-combobox>
+        
+        <!--<lightning-input class="input-field" type="text" label="City" onchange={handleCity}></lightning-input>-->
+        <lightning-input class="input-field" type="email" label="Email" onchange={handleEmail} value={email}></lightning-input>
+        <lightning-input class="input-field" type="number" label="Phone" onchange={handlePhone} value={phone}></lightning-input>
+        <lightning-textarea class="input-field" label="Address" onchange={handleAddress} value={address}></lightning-textarea>
+        <lightning-combobox name="State" class="input-field" 
+                label="State"
+                value={state}
+                placeholder="Select State"
+                options={stateOptions}
+                onchange={handleStateChange}>
+        </lightning-combobox>
+
+<lightning-combobox name="City" class="input-field" 
+                    label="City"
+                    value={city}
+                    placeholder="Select City"
+                    options={cityOptions}
+                    onchange={handleCity}
+                   >
+</lightning-combobox>
+
+    <!-- <template if:true={Job_TypePicklist.data}>
+      <lightning-combobox name="progress" label="Job Type" value={jobtype} placeholder="Select Job Type"
+          options={Job_TypePicklist.data.values} onchange={handleJobtype}>
+      </lightning-combobox>
+  </template> -->
+<div class="button-container">
+    <lightning-button label="Submit" variant="brand" onclick={handleSave}></lightning-button>
+    <lightning-button  label="Reset" variant="brand" onclick={handleClear}></lightning-button>
+</div>
+ </div>
+    <!-- <lightning-card style="display: flex;flex-direction:column;justify-content:center;" title="Job Recruiter Details"> -->
+    
+<!-- </lightning-card> -->
+  
+
+</template>

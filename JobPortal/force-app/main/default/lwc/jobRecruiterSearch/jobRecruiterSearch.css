@@ -1,0 +1,39 @@
+.grid-container
+{
+    display: grid;
+    background-color: #eee;
+    grid-template-columns: repeat(auto-fill,minmax(150px,1fr));
+    margin-left: 10px;
+    margin-right: 10px;
+    border-radius: 5px;
+}
+
+.font-color-style
+{
+    font-size: 18px;
+    font-weight: 700;
+    padding-left: 15px;
+}
+.button-style
+{
+    margin-left: 10px;
+    margin-bottom: 15px;
+}
+.inner-element-font
+{
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.searchSection{margin: 25px;margin-bottom: 40px;padding: 15px 25px;background: #fff9f9;border-radius: 5px;border:1px solid #ddd;font-size: 16px;color: #000;font-family: Arial, Helvetica, sans-serif;}
+
+.searchSection a:hover{text-decoration: none;}
+.searchTitle{font-size: 22px;text-decoration: underline;color:#333;font-weight: 500;}
+
+.searchDesc{font-size: 16px;color:#666;font-weight: 500;line-height: 1.5em;padding: 10px 0px;}
+
+.searchInfoBar{font-size: 16px;color:#666;font-weight: 500;line-height: 1.5em;}
+
+.searchInfoBar .searchName{font-weight: 700}
+
+.searchInfoBar .searchLocation{font-weight: 700}

@@ -1,0 +1,54 @@
+<template>
+    <lightning-card title="Job Search">
+        <lightning-layout multiple-rows="true" vertical-align="end">
+            <lightning-layout-item size="4" padding="around-small">
+                 
+                <lightning-input type="search" label="Enter Job title"
+                    value={searchKey} 
+                    onchange={handelSearchKey}> 
+                </lightning-input>
+            </lightning-layout-item >
+
+            <lightning-layout-item size="2" padding="around-small">
+                
+                 <lightning-button label="Search" variant="brand" onclick={SearchJobHandler}>
+
+                </lightning-button>
+            </lightning-layout-item>
+            
+            
+        </lightning-layout>
+    </lightning-card>   
+
+    <lightning-card> 
+        <span class="grid-container">
+        <div class="font-color-style">
+        <header class="inner-element-font" >seekerName</header>
+        </div>
+        <div class="font-color-style" >
+        <header class="inner-element-font">jobTitle</header>
+    </div>
+    </span>
+        <template for:each={lst} for:item="ls">              
+        
+        <h1 key={ls.id}>
+           
+            <span class="grid-container">
+                
+                <div class="font-color-style">
+                    
+                    <div class="inner-element-font">{ls.seekerName.Name}</div>
+                </div>
+                <div class="font-color-style">
+                   
+                    <div class="inner-element-font">{ls.jobTitle.Name}</div>
+                </div>
+            </span>
+        </h1>
+    
+</template>
+ 
+</lightning-card> 
+
+
+</template>

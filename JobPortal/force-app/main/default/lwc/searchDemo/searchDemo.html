@@ -1,0 +1,33 @@
+<template>
+    <lightning-card>    
+    <lightning-input label="Search Jobs" onchange={handleSearchInput}></lightning-input>
+    <lightning-button label="Search" onclick={handleSearchClick}></lightning-button>
+    <!-- <template if:true={dataVisible}> -->
+    <template for:each={res} for:item="r">
+        <li key={r.Id}>
+            <span class="grid-container">
+                <div class="font-color-style">
+                    Name<div class="inner-element-font">{r.Name}</div>
+                </div>
+                <div class="font-color-style">
+                    Company Name<div class="inner-element-font">{r.Company_Name__c}</div>
+                </div>
+                <div class="font-color-style">
+                    Job Posted<div class="inner-element-font">{r.Job_Posted_Date__c}</div>
+                </div>
+                <div class="font-color-style">
+                    Job End<div class="inner-element-font">{r.Job_End_Date__c}</div>
+                </div>
+                <div class="font-color-style">
+                    Experience<div class="inner-element-font"> {r.Experience__c}</div>
+                </div>
+                <div class="font-color-style">
+                    Job Location<div class="inner-element-font">{r.Job_Location__c}</div>
+                </div>
+            </span>
+        </li>
+    </template>
+<!-- </template> -->
+</lightning-card>
+
+</template>

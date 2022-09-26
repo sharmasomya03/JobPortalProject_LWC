@@ -1,0 +1,43 @@
+<template>
+    <lightning-card title="Job Search for seeker">
+        <lightning-layout multiple-rows="true" vertical-align="end">
+            <lightning-layout-item size="4" padding="around-small">
+                 
+                <lightning-input type="search" label="Enter Job title"
+                    value={searchJob} 
+                    onchange={handleSearch}> 
+                </lightning-input>
+            </lightning-layout-item >
+
+            <lightning-layout-item size="2" padding="around-small">
+                
+                <lightning-button label="Search" variant="brand" onclick={SearchJobHandler}></lightning-button>
+           </lightning-layout-item>
+            </lightning-layout>
+            </lightning-card>
+            
+            <template if:true={HideTable}>
+            
+                <lightning-card>
+            <ul>
+                <template for:each={titleList} for:item="tit">              
+                    
+                    <li key={tit.Id}>
+                        <div class="searchSection"  >
+                            <!--<a onclick={handleClick} data-id={tit.Id} data-name={tit.Name} data-cname={tit.Company_Name__c} data-location={tit.Job_Location__c}>-->
+                                <h2 class="searchTitle">{tit.Name}</h2>
+                                <div class="searchDesc">Lorem ipsum dolor  </div>
+                                <div class="searchInfoBar">
+                                    <span class="searchName"> {tit.Job_Skills__c}</span><br>
+                                    <span class="searchLocation">{tit.Job_Location__c}</span>
+                                </div>
+                            </a>
+                        </div>
+                  </li>
+                    
+            </template>
+        </ul>
+    </lightning-card>
+        </template>
+   
+</template>
