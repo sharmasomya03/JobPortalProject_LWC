@@ -1,0 +1,20 @@
+.tile {
+    width: 760px;
+    height: 110px;
+    padding: 1px !important;
+    background-position: center;
+    background-size: cover;
+    border-radius: 5px;
+    background-color: blanchedalmond;
+  }
+  .selected {
+    border: 3px solid rgb(0, 95, 178);
+    border-radius: 5px;
+  }
+  .tile-wrapper {
+    cursor: pointer;
+    padding: 5px;
+  }
+  .placing{
+    margin-right: 40px;
+  }

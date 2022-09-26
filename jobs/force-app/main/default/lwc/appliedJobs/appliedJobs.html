@@ -1,0 +1,20 @@
+<template>
+   <lightning-card   >
+
+
+    
+    
+
+    <!-- <lightning-button label="Applied jobs" variant="brand" onclick={handleViewAppliedJobs}></lightning-button>  -->
+      
+    <a href="#">Applied Jobs</a>
+    <template for:each={ShowJobDetails} for:item="ApJobs">
+            <li key={ApJobs.Id}>
+                <a href="#" >{ApJobs.job_Title__c} </a>     
+                <a href="#" > {ApJobs.SeekerName__c} </a> 
+            </li>  
+       </template> 
+   </lightning-card>
+
+    
+</template>

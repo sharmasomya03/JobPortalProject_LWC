@@ -1,0 +1,247 @@
+<template>
+    <lightning-card title="Job Search">
+        <lightning-button style="float:right;margin-top:0px;padding-right: 20px;padding-top:0px;" label="Dashboard" variant="brand" onclick={handledash}></lightning-button>
+       <lightning-layout multiple-rows="true" vertical-align="end">
+           <lightning-layout-item size="4" padding="around-small">
+               <template if:true={advBtn}>
+               <lightning-input type="search" label="Enter Job title"
+                   value={searchKey} 
+                   onchange={handelSearchKey}> 
+               </lightning-input>
+               </template>
+           </lightning-layout-item >
+  
+           
+           <lightning-layout-item size="2" padding="around-small">
+            
+               <lightning-button label="Advanced Search" variant="brand" onclick={SearchHandler}>
+               </lightning-button>
+                   <div if:true={buttonVisible}>
+                       <lightning-combobox
+                       name="experience"
+                       label="Experience"
+                       value={exp}
+                       placeholder="Select Experience"
+                       options={options}
+                       onchange={handleChange} ></lightning-combobox>  
+
+                     <lightning-combobox
+                        name="Salary"
+                        label="Salary"
+                        value={values}
+                        placeholder="Select Salary"
+                        options={option}
+                        onchange={handleChangeSalary} ></lightning-combobox>
+
+                       <lightning-button label="Search" variant="brand"  onclick={SearchJobHandler}></lightning-button>  
+                   </div>
+            
+          </lightning-layout-item>
+                
+
+               
+           
+           
+           <!-- <template if:true={HideTable}>
+           <lightning-layout-item size="12" padding="around-small">
+
+                <lightning-datatable
+                key-field="id" 
+                data={titleList} 
+                columns ={cols}
+                onrowaction={handleAction}></lightning-datatable>
+               
+           </lightning-layout-item>
+          </template>  -->
+       </lightning-layout>
+   </lightning-card>   
+   <!-- <lightning-card> 
+   <table border="1">
+       <tr><td>Job Id</td>
+           <td>Job Title</td>
+           <td>Company Name</td>
+            <td>Email</td>
+           <td>Job Post Date</td> 
+            <td>Job End Date</td> 
+            <td>CTC</td>
+            <td>Experience</td>
+            <td>Location</td>
+             </tr>
+             <template for:each={titleList} for:item="tit">
+               <tr key={tit.Id}>
+                   <td>{tit.Id}</td>
+                   <td>
+                       {tit.Name}
+                   </td>
+                   <td>
+                       {tit.Company_Name__c}
+                   </td>
+                   <td>
+                       {tit.Email__c}
+                   </td>
+                   
+                   <td>
+                       {tit.Job_Posted_Date__c}
+                   </td>
+                   <td>
+                       {tit.Job_End_Date__c}
+                   </td>
+                   <td>
+                       {tit.Salary__c}
+                   </td>
+                   <td>
+                       {tit.Experience__c}
+                   </td>
+                   <td>
+                       {tit.Job_Location__c}
+                   </td>
+                   <td>
+                       <lightning-button label="Save" variant="brand" onclick={handlesave}></lightning-button>&nbsp;&nbsp;&nbsp;
+                       <lightning-button label="Apply" variant="brand" onclick={handleapply}></lightning-button>
+                   </td>
+                </tr>
+                
+             </template>
+             
+             
+    </table>
+   </lightning-card> -->
+
+   
+        <template if:true={HideTable}>
+           
+       <lightning-card>
+          
+       <!-- <ul>
+            
+          
+            <template for:each={titleList} for:item="tit">              
+               
+               <li key={tit.Id}>
+                   <span class="grid-container">
+                       <div class="font-color-style">
+                           Name<div class="inner-element-font">{tit.Name}</div>
+                       </div>
+                       <div class="font-color-style">
+                           Company Name<div class="inner-element-font">{tit.Company_Name__c}</div>
+                       </div>
+                       <div class="font-color-style">
+                           Email<div class="inner-element-font">{tit.Email__c} </div>
+                       </div>
+                       <div class="font-color-style">
+                           Job Posted<div class="inner-element-font">{tit.Job_Posted_Date__c}</div>
+                       </div>
+                       <div class="font-color-style">
+                           Job End<div class="inner-element-font">{tit.Job_End_Date__c}</div>
+                       </div>
+                       <div class="font-color-style">
+                           salary<div class="inner-element-font">{tit.Salary__c}</div>
+                       </div>
+                       <div class="font-color-style">
+                           Experience<div class="inner-element-font"> {tit.Experience__c}</div>
+                       </div>
+                       <div class="font-color-style">
+                           Job Location<div class="inner-element-font">{tit.Job_Location__c}</div>
+                       </div>
+                   </span>
+
+
+                   <div class="button-style">
+                       <lightning-button label="Save" variant="brand"   onclick={handlesave}></lightning-button>&nbsp;&nbsp;&nbsp;
+                       <lightning-button label="Apply" variant="brand" data-name={tit.Name} onclick={handleapply} ></lightning-button>
+                   </div>
+                   
+               </li>
+           </template>
+           
+       </ul> -->
+
+       
+   <!-- onclick={handleJobDetailPage} -->
+       <ul>
+           <template for:each={titleList} for:item="tit">              
+               
+               <li key={tit.Id}>
+                   <div class="searchSection"  >
+                    <a onclick={handleClick} data-id={tit.Id} data-uid={tit.UserId__c} data-name={tit.Name} data-cname={tit.Company_Name__c} data-location={tit.Job_Location__c}  data-email={tit.Email__c} data-jobposteddate={tit.Job_Posted_Date__c} data-jobenddate={tit.Job_End_Date__c} data-salary={tit.Salary__c} data-experience={tit.Experience__c} data-state={tit.State__c} data-city={tit.City__c} >
+                           <h2 class="searchTitle">{tit.Name}</h2>
+                           <div class="searchDesc">Lorem ipsum dolor  </div>
+                           <div class="searchInfoBar">
+                               <span class="searchName"> {tit.Company_Name__c}</span><br>
+                               <span class="searchLocation">{tit.Job_Location__c}</span>
+                           </div>
+                       </a>
+                   </div>
+             </li>
+               
+       </template>
+   </ul>
+                       
+       
+                   
+    <template if:true = {JobInfo}>
+       
+       <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+           <div class="slds-modal__container"> -->
+            <!-- modal header start -->
+              <header class="slds-modal__header">
+                 <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close" onclick={hideModalBox}>
+                    <lightning-icon icon-name="utility:close"
+                       alternative-text="close"
+                       variant="inverse"
+                       size="small" ></lightning-icon>
+                    <span class="slds-assistive-text">Close</span>
+                 </button>
+                 <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">Job Description  Page</h2>
+              </header>
+          
+              <!-- modal body start -->
+               <!-- <p>{titId}</p> -->
+            <div style="background-color: #D3D3D3;">
+                <pre style="margin-left:10px ;">
+               <p><b>UserId :        </b>{titUserId}</p>     
+               <p><b>Job Title :     </b> {titName}</p><br>
+               <p><b>Company Name :  </b>{titCname}</p><br>
+               <p><b>Job Location :  </b>{titLocation}</p><br>
+               <p><b>Email :         </b> {titEmail}</p><br>
+               <p><b>JobPostedDate : </b> {titJobPostedDate}</p><br>
+               <p><b>JobEndDate :    </b> {titJobEndDate}</p><br>
+               <p><b>Salary :        </b> {titSalary}</p><br>
+               <p><b>Experience :    </b> {titExperience}</p><br>
+               <p><b>Sate       :    </b> {titState}</p><br>
+               <p><b>City       :    </b> {titCity}</p>
+              
+                </pre>
+            </div>
+            
+           
+
+     
+              <!-- modal footer start-->
+          
+               <footer class="slds-modal__footer" style="background-color: #D3D3D3;">
+               <button class="slds-button slds-button_neutral" onclick={handleSaveJob}>Save</button>
+               <button class="slds-button slds-button_neutral" onclick={handleApplyJob}>Apply</button>
+                 <button class="slds-button slds-button_neutral" onclick={handleCancelJob}>Cancel</button>
+              </footer> 
+           
+      
+           </div>
+        </div>
+        </section>
+     
+
+     </template>
+ 
+
+       
+   </lightning-card>  
+
+
+
+   
+   </template> 
+   
+   
+
+</template>

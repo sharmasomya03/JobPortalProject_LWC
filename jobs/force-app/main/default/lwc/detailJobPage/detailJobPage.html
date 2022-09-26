@@ -1,0 +1,28 @@
+<template>
+    <template for:each={titleList} for:item="tit">              
+                
+        <li key={tit.Id}>
+            <span class="grid-container">
+                <div class="font-color-style">
+                    Name<div class="inner-element-font">{tit.Name}</div>
+                </div>
+                <div class="font-color-style">
+                    Company Name<div class="inner-element-font">{tit.Company_Name__c}</div>
+                </div>
+                
+               
+                <div class="font-color-style">
+                    Job Location<div class="inner-element-font">{tit.Job_Location__c}</div>
+                </div>
+            </span>
+
+
+            <div class="button-style">
+                <lightning-button label="Save" variant="brand"  data-id={tit.Id} onclick={handlesave}></lightning-button>&nbsp;&nbsp;&nbsp;
+                <lightning-button label="Apply" variant="brand" onclick={handleapply}></lightning-button>
+            </div>
+            
+        </li>
+    </template>
+    
+</template>

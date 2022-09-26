@@ -1,0 +1,45 @@
+<template>
+    <div class="input-field-container">
+        <h2><b> Job Seeker Profile Page</b></h2>
+    <lightning-input class="input-field fname" type = "text" value={firstname} label = "First Name " onchange={handleFirstName} ></lightning-input>
+    <lightning-input class="input-field" type = "text" value={lastname} label = "Last Name" onchange={handleLastName} ></lightning-input>
+    <lightning-radio-group class="input-field" name="Gender" label="Gender" options={options} value={value} type="button"  onchange={handleGender}></lightning-radio-group> 
+    <lightning-input class="input-field" label="DOB" type="date" value={dtDOB} onchange={handleDOB}></lightning-input>
+    <lightning-textarea class="input-field" value={coverLetter} label="Cover Letter" onchange={handleCoverLetter}></lightning-textarea>
+    <lightning-combobox
+                        name="experience" class="input-field"
+                        label="Experience"
+                        value={exp}
+                        placeholder="Select Experience"
+                        options={option}
+                        onchange={handleExperience} ></lightning-combobox>  
+    
+    <div class="input-field">
+        <template if:true={jobSkills.data}> 
+        <lightning-combobox name="jobSkills" label="Job Skills" value={skills} placeholder="Select Skills"
+            options={jobSkills.data.values} onchange={handleChangeSkills}>
+        </lightning-combobox>
+      </template>
+    </div>
+    <lightning-input class="input-field" type = "text" value={jobLocation} label = "Job Location" onchange={handleJobLocation} ></lightning-input>
+    
+    <lightning-input class="input-field" type= "email" value={email} label="Email" onchange={handleEmail}></lightning-input>
+    <!-- <lightning-input class="input-field" type= "text" value={jobSkills} label = "Job Skills" onchange={handleJobSkills} ></lightning-input> -->
+    <lightning-input class="input-field" type = "number" required="true" value={phone} label = "Phone" onchange={handlePhone} ></lightning-input>
+    
+    <lightning-combobox name="Expected CTC" class="input-field" 
+                label="Expected CTC"
+                value={salary}
+                placeholder="Select CTC"
+                options={optio}
+                onchange={handleSalaryChange}>
+        </lightning-combobox>
+    <lightning-file-upload class="input-field" label="Upload Resume" name="resumeUpload" accept={acceptedFormat} record-id={myRecordId} ></lightning-file-upload>
+     
+    <div class="button-container">
+        <lightning-button  label="Submit" variant="brand" onclick={handleSubmit}></lightning-button>
+        <lightning-button  label="Reset" variant="brand" onclick={handleReset}></lightning-button>
+    </div>
+    
+    </div>
+</template>

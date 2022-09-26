@@ -1,0 +1,78 @@
+<aura:component implements="flexipage:availableForAllPageTypes" controller="JobRecruiterClass">
+<aura:attribute name="isShowModal" type="boolean" default="false"></aura:attribute>
+<aura:attribute name="compName" type="String"></aura:attribute>
+<aura:attribute name="jobTitle" type="String" ></aura:attribute>
+<aura:attribute name="jobDesc" type="String" ></aura:attribute>
+<aura:attribute name="jobPost" type="Date" ></aura:attribute>
+<aura:attribute name="jobEnd" type="Date" ></aura:attribute>
+<aura:attribute name="jobLoc" type="String" ></aura:attribute>
+<aura:attribute name="exp" type="Integer" ></aura:attribute>
+<aura:attribute name="ctc" type="Integer" ></aura:attribute>
+
+<aura:attribute name="stateOptions" type="String" ></aura:attribute>
+<aura:attribute name="cityOptions" type="String" ></aura:attribute>
+
+
+
+<lightning:card>
+    <lightning:button label="Job Post" variant="brand" onclick ="{!c.handleClick}" ></lightning:button>
+
+  <aura:if isTrue="{!v.isShowModal}"> 
+        <div class="slds-m-around_xx-large">       
+       
+             
+            <div class="slds-modal__container">
+              
+               <header class="slds-modal__header">
+                   <lightning:buttonIcon iconName="utility:close"
+                    onclick="{!c.closeModel }"  
+                    alternativeText="close"
+                    variant="bare-inverse"
+                    class="slds-modal__close"/> <b>Create New Job Post</b>
+                   
+               </header>
+    <div class="slds-modal__content slds-p-around_medium"  id="modal-content-id-1">
+   <lightning:input  type="text" label="CompanyName" value="{!v.compName}"></lightning:input>
+   <lightning:input  type="text" label="Job Title" value="{!v.jobTitle}"></lightning:input>
+   <lightning:input  type="text" label="Job Description" value="{!v.jobDesc}"></lightning:input>
+   <lightning:input  type="date" label="Job Posted Date" value="{!v.jobPost}"></lightning:input>
+   <lightning:input  type="date" label="Job End Date" value="{!v.jobEnd}"></lightning:input>
+   <lightning:input  type="text" label="Job Location" value="{!v.jobLoc}"></lightning:input>
+   <lightning:input  type="number" label="Experience" value="{!v.exp}"></lightning:input>
+   <lightning:input  type="number" label="CTC" value="{!v.ctc}"></lightning:input>
+    <!-- <lightning:combobox name="State" 
+                        label="State" 
+                        value="state"
+                        placeholder="Select State"
+                        options="{!v.stateOptions}"
+                                    ></lightning:combobox>
+
+   <lightning:combobox name="City" class="input-field" aura:id="txtCity"
+                    label="City"
+                    value="city"
+                    placeholder="Select City"
+                    options="{!v.cityOptions}"></lightning:combobox>  -->
+                    
+               
+                   
+      
+                <div class="slds-align_absolute-center">
+                <footer class="slds-modal__footer">
+                   <lightning:button variant="neutral" 
+                   label="Cancel"
+                   title="Cancel"
+                   onclick="{! c.closeModel}"/>
+
+                   <lightning:button variant="brand" 
+                   label="Save"
+                   title="Save"
+                   onclick="{! c.saveBox}"/>
+               </footer>
+               </div>
+            </div>
+           </div>
+        </div>
+</aura:if>
+</lightning:card>
+
+</aura:component>

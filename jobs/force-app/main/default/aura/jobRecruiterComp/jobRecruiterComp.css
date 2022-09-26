@@ -1,0 +1,32 @@
+.THIS .input-field-container
+{
+    display: flex;
+    background-color:white;
+    flex-direction:column;
+    width: 70%;
+    align-items: center;
+    margin: 0 auto;
+    border-radius: 5px;
+
+
+}
+.THIS .input-field
+{
+    width: 60%;
+    margin: 0px 10px;
+    box-sizing: border-box;
+    margin-top: 5px;
+}
+.THIS .button-container
+{
+display: flex;
+justify-content: flex-end;
+width:60%;
+padding: 8px 0;
+gap:6px;
+}
+
+.THIS .font{
+    font-size: 20px;
+    
+} 

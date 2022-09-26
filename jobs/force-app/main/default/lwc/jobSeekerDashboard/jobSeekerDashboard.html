@@ -1,0 +1,94 @@
+<template>
+    <lightning-card    title="DashBoard  Job-seeker" >
+
+
+  <div class="slds-grid slds-gutters"  >
+
+    <div class="slds-col slds-size_2-of-3 ">
+         
+      <!--tile wala logic-->
+             <div class={tileClass} style="width:780px; padding: 25px" onclick={handleDiv}>
+                    <ul class="slds-has-dividers_around-space">
+                    <li class="slds-item">
+                    <article class="slds-tile slds-tile_board">
+         <div class="slds-grid slds-gutters">
+
+
+           <div class="slds-col slds-size_2-of-3">
+       <!-- <h3 class = "slds-tile__title slds-truncate" title="Anypoint Connectors"> 
+        <a href="#">{recruiterValue.Name}</a>  
+       </h3>-->
+       <div class="slds-tile__detail padding"  >
+       <p class="slds-text-heading_medium ">Company_Name:</p> 
+         <!-- //{recruiterValue.Company_Name__c} -->
+       
+       <p class="slds-truncate" title="Job Posted">Posted on:</p>
+       <!-- //{recruiterValue.job_posted_date__c} -->
+       </div>
+     </div>
+
+
+
+
+
+       <div class="slds-col slds-size_1-of-3 padding">
+         <p class="slds-text-heading_small">Job Type:</p>
+               <!-- //{recruiterValue.Job_Type__c} -->
+         <p class="slds-text-heading_small">Salary:</p>
+         <!-- //{recruiterValue.Salary__c} -->
+         <p class="slds-text-heading_small">Location:</p>
+         <!-- //{recruiterValue.Job_Location__c} -->
+   
+       </div>
+     </div>
+       </article>
+       </li>
+       </ul>
+       </div>
+   
+     
+  
+     
+     
+     
+   
+   
+  </div>
+
+        <!-- <div class="slds-col slds-size_-of-3">
+          <lightning-accordion allow-multiple-sections-open
+          onsectiontoggle={handleToggleSection}
+          active-section-name={activeSection}>
+
+           job Details
+
+            <div class="slds-grid slds-grid_vertical">
+              <div class="slds-col">
+                <span style="background-color: black">1</span>
+              </div>
+              <div class="slds-col">
+                <span>2</span>
+              </div>
+              <div class="slds-col">
+                <span>3</span>
+              </div>
+            </div> -->
+         
+
+
+            <!-- <lightning-accordion-section class=" slds-align_absolute-center"  name="Applied Jobs" label="Applied Jobs" onclick={handleAppliedJob}>
+            </lightning-accordion-section>
+
+           <lightning-accordion-section class="slds-align_absolute-center" name="Saved Jobs" label="Saved Jobs" onclick={handleSavedJob}> 
+           </lightning-accordion-section>  
+
+
+        </lightning-accordion>
+        </div>-->
+  
+      
+
+        </div>
+       </lightning-card>
+   
+</template>

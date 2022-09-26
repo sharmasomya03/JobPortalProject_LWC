@@ -1,0 +1,32 @@
+<template>
+  <template if:true={showJob}>
+    <!-- <lightning-card title={companyName} icon-name="custom:custom11" ><hr>
+      <h1>{jobName}</h1>
+    </lightning-card> -->
+    <!-- comment by suryansh -->
+    <!-- comments one again -->
+  <lightning-card>
+    <div class="slds-grid slds-gutters">
+      <div class="slds-col slds-size_1-of-12">
+        <div class="slds-p-around_small"><lightning-icon icon-name="custom:custom11" size="large"></lightning-icon></div>
+      </div>
+      <div class="slds-col slds-size_8-of-12">
+        <h1>{companyName}</h1>
+        <p style="margin-left:30px;">{jobName}☜</p>
+        <div style="border: radius 18px"></div><lightning-button label="GoBack" onclick={handleGoBack}></lightning-button>
+      </div>
+    </div><hr class="new1">
+  </lightning-card>
+  </template>
+  <template if:false={showJob}>
+    <span class="slds-align_absolute-center">
+      Please select a Job to see its decsription!
+    </span>
+
+    <!-- this is practice for 311 home page --> 
+
+    <!-- <div style="height:90px; width:1219px; top:28px; left:30px; border-radius:10px; background: #193E83">
+      <img src={CityOfDallas1}/>
+    </div> -->
+  </template>
+  </template>

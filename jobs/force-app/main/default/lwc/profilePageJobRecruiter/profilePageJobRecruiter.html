@@ -1,0 +1,48 @@
+<template>
+    <div class="input-field-container">
+        <h1><b> Job Recruiter Profile Page</b></h1>
+        <lightning-record-edit-form object-api-name="Job_Recruiter__c"
+                               record-id={recordId} onsubmit={submit}>
+    
+    
+          
+             <lightning-input-field class="input-field" field-name={jobTitle}></lightning-input-field>
+    
+          
+            <lightning-input-field class="input-field" field-name={companyName}></lightning-input-field>
+    
+          
+            <lightning-input-field class="input-field" field-name={description}></lightning-input-field>
+        
+          <lightning-layout-item >
+          <lightning-input-field class="input-field" field-name={jobPosted}></lightning-input-field>
+          </lightning-layout-item>
+          <lightning-layout-item >
+          <lightning-input-field class="input-field" field-name={jobEnd}></lightning-input-field>
+          </lightning-layout-item>
+         
+            <lightning-input-field class="input-field" field-name={jobEXp}></lightning-input-field>
+          
+    
+            <lightning-input-field class="input-field" field-name={jobEmai}></lightning-input-field>
+         
+    
+            <lightning-input-field class="input-field" field-name={phone}></lightning-input-field>
+          
+    
+            <lightning-input-field class="input-field" field-name={state}></lightning-input-field>
+       
+             <lightning-input-field class="input-field" field-name={city}></lightning-input-field>
+          
+    
+            <lightning-input-field class="input-field" field-name={address}></lightning-input-field>
+       
+          
+            <div class="button-container">
+         <lightning-button variant="brand" label="Submit" title="Submit" type="submit"></lightning-button>
+             </div>
+    
+    
+        </lightning-record-edit-form>
+    </div>
+</template>
